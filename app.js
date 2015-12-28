@@ -2,8 +2,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 
-
-
 module.exports = function (booksRepo) {
   app.use(bodyParser.json());
 
