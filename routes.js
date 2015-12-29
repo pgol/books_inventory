@@ -9,7 +9,11 @@ module.exports = function (booksRepo) {
     getOne: function (req, res) {
       return booksRepo.getBook(req.params.isbn)
         .then(function (book) {
-          res.json(book);
+          if(book) {
+            res.json(book);
+          } else {
+            res.status(404).json({error: 'No book with ISBN: ' + req.params.isbn});
+          }
         });
     },
     post: function (req, response) {
