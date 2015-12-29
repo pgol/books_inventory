@@ -19,7 +19,7 @@ describe('GET stock', function () {
   it('responds with list of books', function () {
     return request(app)
       .get('/stock')
-      .expect(200)
+      .expect(200);
   });
 
   it('responds with single book', function (done) {
@@ -27,12 +27,11 @@ describe('GET stock', function () {
       .get('/stock/1')
       .expect('Content-Type', /json/)
       .end(function (err, res) {
-        console.log('end!');
         if (err) {
           done(err);
         }
         assert.equal(res.res.body.isbn, 1);
         done();
-      })
+      });
   });
 });

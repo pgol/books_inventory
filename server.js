@@ -1,4 +1,4 @@
-var booksRepo = require('./tests/testStore');
+var booksRepo = require('./booksRepo');
 var app = require('./app')(booksRepo);
 var port = 3000;
 var server = app.listen(port, function () {
