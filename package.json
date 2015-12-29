@@ -8,7 +8,9 @@
     "test": "mocha tests/e2eTests.js",
     "test:xunit": "npm run test -- --reporter xunit",
     "lint": "jshint --exclude=node_modules/** **.js",
-    "watch": "nodemon server.js"
+    "watch": "nodemon server.js",
+    "heroku:test": "node ./infrastructure/test.js"
+
   },
   "author": "",
   "license": "ISC",
