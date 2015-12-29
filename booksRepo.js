@@ -23,11 +23,7 @@ function getBook(isbn) {
   return collection.then(function (booksCollection) {
     return booksCollection.find({isbn: parseInt(isbn)}).limit(1).next();
   }).then(function (book) {
-    if (book) {
-      return book;
-    } else {
-      return null;
-    }
+    return book ? book : null;
   });
 }
 

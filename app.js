@@ -7,8 +7,9 @@ module.exports = function (booksRepo) {
   app.use(bodyParser.json());
 
 
-
-
+  app.get('/', function (req, res) {
+    res.json('hello');
+  });
   app.get('/stock', routes.get);
   app.get('/stock/:isbn', routes.getOne);
   app.post('/stock', routes.post);
