@@ -11,7 +11,7 @@ module.exports = function (booksRepo) {
         .then(function (book) {
           if(book) {
             //res.json(book);
-            res.send(`<div>${book.count} compies left</div>`)
+            res.send(`<div>${book.count} compies left ${req.headers['x-request-id']} , ${req.header('x-request-id')} , ${req.get('x-request-id')}</div>`)
           } else {
             res.status(404).json({error: 'No book with ISBN: ' + req.params.isbn});
           }
