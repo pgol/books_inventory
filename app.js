@@ -8,6 +8,7 @@ module.exports = function (booksRepo) {
 
   app.get('/', function (req, res) {
     res.json('hello world');
+    console.log('test');
   });
   app.get('/stock', routes.get);
   app.get('/stock/:isbn', routes.getOne);
